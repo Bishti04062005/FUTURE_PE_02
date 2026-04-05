@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AI Ad Studio - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#151719",
+                        "secondary": "#52643d",
+                        "surface": "#faf9f3",
+                        "surface-container-highest": "#e3e3dd",
+                        "surface-container-low": "#f5f4ee",
+                        "primary-container": "#2a2b2e",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#45474a"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .paper-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-primary min-h-screen relative selection:bg-secondary/30 flex flex-col justify-center items-center">
+    <!-- Paper Grain -->
+    <div class="fixed inset-0 pointer-events-none paper-grain z-50"></div>
+    
+    <!-- Organic blobs -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-[10%] left-[15%] w-64 h-64 bg-surface-container-highest rounded-full blur-[100px] opacity-60"></div>
+        <div class="absolute bottom-[5%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[120px] opacity-40"></div>
+    </div>
+
+    <!-- Login Container -->
+    <main class="w-full max-w-md p-6 relative z-10">
+        <div class="text-center mb-10">
+            <h1 class="font-headline text-4xl font-black text-primary">AI Ad <span class="italic text-secondary">Studio</span></h1>
+            <p class="mt-2 font-medium text-sm text-on-surface-variant uppercase tracking-widest">Sign in to your workspace</p>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-xl p-8 rounded-[2rem] shadow-2xl border border-surface-container-highest/50">
+            <div id="error-box" class="hidden mb-6 p-4 bg-red-50 border border-error/20 text-error rounded-xl text-sm font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined shrink-0 text-base">error</span>
+                <span id="error-message">Invalid credentials.</span>
+            </div>
+
+            <form id="auth-form" class="space-y-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Email Address</label>
+                    <input type="email" id="email" required class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 placeholder-primary/30 focus:ring-2 focus:ring-secondary/50 font-medium" placeholder="director@agency.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Password</label>
+                    <input type="password" id="password" required class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 placeholder-primary/30 focus:ring-2 focus:ring-secondary/50 font-medium" placeholder="••••••••">
+                </div>
+                
+                <button type="submit" id="submit-btn" class="w-full bg-primary-container text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:-translate-y-1 transition-transform shadow-lg active:scale-95">
+                    <span id="submit-text">Log In</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <p class="text-sm font-medium text-on-surface-variant cursor-pointer transition-colors" id="toggle-mode">
+                    Don't have an account? <span class="text-secondary font-bold hover:underline">Create one</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById('auth-form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const toggleMode = document.getElementById('toggleMode');
+        const submitText = document.getElementById('submit-text');
+        const errorBox = document.getElementById('error-box');
+        const errorMessage = document.getElementById('error-message');
+        const toggleBtn = document.querySelector('#toggle-mode span');
+
+        let isLogin = true;
+
+        document.getElementById('toggle-mode').addEventListener('click', () => {
+            isLogin = !isLogin;
+            if(isLogin) {
+                submitText.innerText = "Log In";
+                toggleBtn.innerText = "Create one";
+                toggleMode.childNodes[0].nodeValue = "Don't have an account? ";
+            } else {
+                submitText.innerText = "Create Account";
+                toggleBtn.innerText = "Log in";
+                toggleMode.childNodes[0].nodeValue = "Already have an account? ";
+            }
+            errorBox.classList.add('hidden');
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorBox.classList.add('hidden');
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+
+            const originalBtnText = submitText.innerText;
+            submitText.innerText = "Processing...";
+
+            try {
+                const res = await fetch(`http://localhost:3000${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+                
+                if(!res.ok) {
+                    errorBox.classList.remove('hidden');
+                    errorMessage.innerText = data.error || "An error occurred.";
+                    submitText.innerText = originalBtnText;
+                    return;
+                }
+
+                if(data.success && data.token) {
+                    localStorage.setItem('adEngine_token', data.token);
+                    window.location.href = "multi_step_form.html";
+                }
+            } catch (err) {
+                errorBox.classList.remove('hidden');
+                errorMessage.innerText = "Could not connect to server.";
+                submitText.innerText = originalBtnText;
+            }
+        });
+    </script>
+</body>
+</html>

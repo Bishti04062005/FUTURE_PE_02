@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Ad Studio - Business Variables</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c7c6ca",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffd9df",
+                        "on-background": "#1b1c19",
+                        "outline-variant": "#c6c6ca",
+                        "on-tertiary-container": "#bc838e",
+                        "on-secondary-fixed": "#102002",
+                        "on-primary-container": "#929295",
+                        "surface-container": "#efeee8",
+                        "on-secondary-fixed-variant": "#3a4c27",
+                        "tertiary": "#2d0a14",
+                        "error-container": "#ffdad6",
+                        "primary": "#151719",
+                        "tertiary-fixed-dim": "#f5b6c1",
+                        "surface-tint": "#5e5e61",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#2a2b2e",
+                        "secondary-fixed-dim": "#b8ce9e",
+                        "inverse-surface": "#30312d",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "surface-container-high": "#e9e8e2",
+                        "surface-container-low": "#f5f4ee",
+                        "on-secondary-container": "#576a42",
+                        "background": "#faf9f3",
+                        "on-primary-fixed-variant": "#46474a",
+                        "surface-variant": "#e3e3dd",
+                        "secondary": "#52643d",
+                        "on-surface-variant": "#45474a",
+                        "secondary-fixed": "#d4eab8",
+                        "primary-fixed": "#e3e2e6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1a1c1e",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-container": "#461f28",
+                        "secondary-container": "#d4eab8",
+                        "surface": "#faf9f3",
+                        "surface-container-highest": "#e3e3dd",
+                        "surface-bright": "#faf9f3",
+                        "outline": "#76777b",
+                        "on-tertiary-fixed-variant": "#673943",
+                        "primary-fixed-dim": "#c7c6ca",
+                        "on-tertiary-fixed": "#330f19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .paper-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+        }
+        .wavy-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 95% 92%, 90% 88%, 85% 91%, 80% 89%, 75% 93%, 70% 87%, 65% 90%, 60% 88%, 55% 92%, 50% 89%, 45% 91%, 40% 88%, 35% 94%, 30% 86%, 25% 92%, 20% 89%, 15% 91%, 10% 87%, 5% 93%, 0% 88%);
+        }
+        .organic-shape-1 { border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%; }
+        .organic-shape-2 { border-radius: 30% 70% 40% 60% / 50% 30% 70% 40%; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background overflow-x-hidden min-h-screen relative selection:bg-secondary/30">
+<!-- Paper Grain Overlay -->
+<div class="fixed inset-0 pointer-events-none paper-grain z-50"></div>
+<!-- Multi-layered Organic Background -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+<!-- Abstract Sky Elements -->
+<div class="absolute top-[10%] left-[15%] w-32 h-16 bg-surface-container-highest organic-shape-1 opacity-60"></div>
+<div class="absolute top-[5%] right-[20%] w-48 h-20 bg-surface-container-low organic-shape-2 opacity-40"></div>
+<!-- Background Hills (Multi-layered paper cuts) -->
+<div class="absolute -bottom-20 -left-20 w-[60%] h-[50%] bg-secondary/10 organic-shape-1 rotate-12"></div>
+<div class="absolute -bottom-32 -right-10 w-[70%] h-[60%] bg-tertiary-fixed-dim/20 organic-shape-2 -rotate-6"></div>
+<div class="absolute -bottom-16 left-1/4 w-[80%] h-[40%] bg-secondary-container/30 organic-shape-1"></div>
+<!-- Abstract Cutout Trees/Plants -->
+<div class="absolute bottom-0 left-12 w-24 h-64 bg-secondary/20 wavy-edge rounded-t-full hidden md:block"></div>
+<div class="absolute bottom-0 right-32 w-16 h-48 bg-primary/5 rounded-t-full hidden md:block"></div>
+<!-- Mustard Yellow Accent Shape -->
+<div class="absolute top-1/4 -right-16 w-64 h-64 bg-[#e9c46a]/10 organic-shape-2"></div>
+</div>
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-40 bg-[#faf9f3]/80 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(21,23,25,0.05)] px-6 py-4 flex justify-between items-center max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<button id="hamburger-btn" class="material-symbols-outlined text-primary hover:text-secondary transition-colors cursor-pointer">menu</button>
+<span class="font-['Noto_Serif'] font-black text-2xl tracking-tight text-primary">AI Ad Studio</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a href="campaigns.html" class="font-['Manrope'] font-medium uppercase tracking-widest text-xs text-primary hover:opacity-80">Campaigns</a>
+<a href="history.html" class="font-['Manrope'] font-medium uppercase tracking-widest text-xs text-primary/60 hover:opacity-80">History</a>
+</div>
+<a href="profile.html" class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/10 hover:opacity-80">
+<img alt="User Profile" class="rounded-full w-full h-full object-cover" data-alt="close-up studio portrait of a creative professional with a neutral background and soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpgsFzS3aXN5409YTl3yzspmAHoDn-rboyAgZ0XHPn7BaDx8GC2o2reLzWUqWN8V46cKZgOgOmwcYPZUl3zTUsm2noBJpGTWBPXjcqBl_Pje42G6VRxBnQXNXsyiAyfZ-HRrxvTyzZpYu40gqKV-rjROQQ87FkWtIe6TIiqJEDZLOt7QzU6gGziZfih8YHo4jF8rGPRDb8nalniihMCiOBjPAc_fGLrEiO5hmYS3-Ne0P89ldJYM3-TqXvxbU2rc_qm_yH6acQ1kw"/>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-[85vh] flex items-center justify-center p-6 pt-20 pb-12 mt-8">
+<div class="relative w-full max-w-2xl">
+<!-- Decorative Cutout Card (The Layered Vellum Effect) -->
+<div class="absolute -inset-4 bg-surface-container-low/40 rounded-xl blur-xl -z-10"></div>
+<section class="bg-surface/90 backdrop-blur-md rounded-xl p-8 shadow-[0_40px_100px_-20px_rgba(21,23,25,0.08)] border border-surface-container-highest/30">
+<!-- Progress Indicator -->
+<div class="mb-6 flex flex-col gap-2">
+<span id="step-indicator" class="font-label text-[10px] font-extrabold uppercase tracking-[0.2em] text-secondary">Step 1 of 3: Business Variables</span>
+<div class="flex gap-1 h-1 w-32 bg-surface-container">
+<div id="progress-fill" class="bg-secondary w-1/3 h-full transition-all duration-500"></div>
+<div class="bg-surface-container-highest w-full h-full flex-1"></div>
+</div>
+</div>
+<!-- Header Content -->
+<header class="mb-8">
+<h1 id="step-headline" class="font-headline text-3xl md:text-5xl font-black text-primary leading-tight">
+                        Let's define <span class="italic text-secondary">your angle.</span>
+</h1>
+<p id="step-description" class="mt-2 text-on-surface-variant max-w-md font-medium text-sm md:text-base">Identify the specific segment and core promise that sets your brand apart in the digital landscape.</p>
+</header>
+<!-- Form Fields -->
+<form id="dynamic-form" class="space-y-6" onsubmit="event.preventDefault(); advanceFormStep();">
+<!-- Field 1: Niche -->
+<div class="group">
+<label id="label-1" class="block font-label text-[10px] font-bold uppercase tracking-wider text-primary/60 mb-1 transition-colors group-focus-within:text-secondary">
+                            Niche
+                        </label>
+<input id="input-1" class="w-full bg-transparent border-0 border-b-2 border-surface-container-highest py-2 px-0 focus:ring-0 focus:border-secondary placeholder:text-outline/40 font-medium text-base transition-all duration-300" placeholder="e.g., Medical Spa / Skin Clinic" type="text"/>
+</div>
+<!-- Field 2: Pain Point -->
+<div class="group">
+<label id="label-2" class="block font-label text-[10px] font-bold uppercase tracking-wider text-primary/60 mb-1 transition-colors group-focus-within:text-secondary">
+                            Pain Point
+                        </label>
+<input id="input-2" class="w-full bg-transparent border-0 border-b-2 border-surface-container-highest py-2 px-0 focus:ring-0 focus:border-secondary placeholder:text-outline/40 font-medium text-base transition-all duration-300" placeholder="e.g., Tired of hiding acne scars under heavy makeup." type="text"/>
+</div>
+<!-- Field 3: Hero Solution -->
+<div id="field-3-wrapper" class="group transition-all duration-300">
+<label class="block font-label text-[10px] font-bold uppercase tracking-wider text-primary/60 mb-1 transition-colors group-focus-within:text-secondary">
+                            The "Hero" Solution
+                        </label>
+<input id="input-3" class="w-full bg-transparent border-0 border-b-2 border-surface-container-highest py-2 px-0 focus:ring-0 focus:border-secondary placeholder:text-outline/40 font-medium text-base transition-all duration-300" placeholder="e.g., Advanced Laser Resurfacing" type="text"/>
+</div>
+<!-- Action Row -->
+<div class="pt-4 flex justify-end">
+<button type="submit" class="bg-primary-container text-surface px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:translate-y-[-2px] hover:shadow-xl transition-all duration-300 group">
+                            Next Step
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Decorative "Artisanal" Floating Element -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 md:w-48 md:h-48 z-10 pointer-events-none opacity-40">
+<div class="w-full h-full bg-tertiary-fixed-dim organic-shape-1 relative">
+<div class="absolute inset-4 border-2 border-dashed border-tertiary/20 organic-shape-1"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Navigation Shell -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-2 bg-[#faf9f3]/90 backdrop-blur-md shadow-[0_-10px_30px_rgba(21,23,25,0.08)] rounded-t-[2.5rem]">
+<div class="flex flex-col items-center justify-center bg-[#2a2b2e] text-[#faf9f3] rounded-full p-3 scale-110 -translate-y-2">
+<span class="material-symbols-outlined" data-weight="fill">add_circle</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase mt-1">Create</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#151719]/50 p-3">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#151719]/50 p-3">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase mt-1">Support</span>
+</div>
+</div>
+<!-- Sidebar Menu -->
+<div id="sidebar-menu" class="fixed inset-0 z-[100] hidden pointer-events-none">
+<div id="sidebar-backdrop" class="absolute inset-0 bg-primary/20 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-auto cursor-pointer"></div>
+<div id="sidebar-panel" class="absolute top-0 left-0 w-[80%] max-w-sm h-full bg-surface shadow-2xl transition-transform duration-300 -translate-x-full flex flex-col pointer-events-auto">
+<div class="px-6 py-6 flex justify-between items-center border-b border-surface-container-highest">
+<span class="font-['Noto_Serif'] font-black text-2xl tracking-tight text-primary">Menu</span>
+<button id="close-menu-btn" class="material-symbols-outlined text-primary hover:text-secondary hover:rotate-90 transition-all">close</button>
+</div>
+<nav class="p-6 flex flex-col gap-6 font-medium uppercase tracking-widest text-sm text-primary/80">
+<a href="landing_page.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">home</span> Home</a>
+<a href="multi_step_form.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">add_circle</span> Create Ad</a>
+<a href="showcase_output.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+<a href="campaigns.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">campaign</span> Campaigns</a>
+<a href="history.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">history</span> History</a>
+<a href="profile.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">person</span> Profile</a>
+<a href="contact.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">contact_support</span> Support</a>
+</nav>
+</div>
+</div>
+<script>
+    let currentTaskStep = 1;
+    let businessVars = {};
+
+    function advanceFormStep() {
+        if (currentTaskStep === 1) {
+            // Capture step 1 vars
+            businessVars.niche = document.getElementById('input-1').value || 'that clinic';
+            businessVars.painPoint = document.getElementById('input-2').value || 'that problem';
+            businessVars.hero = document.getElementById('input-3').value || 'our special solution';
+            
+            document.getElementById('step-indicator').innerText = 'Step 2 of 3: Vibe & Local Anchor';
+            document.getElementById('step-headline').innerHTML = 'Define <span class="italic text-secondary">the vibe.</span>';
+            document.getElementById('step-description').innerText = 'Ensure the output isn\'t generic "AI-speak".';
+            
+            document.getElementById('label-1').innerText = 'The "Vibe"';
+            document.getElementById('input-1').placeholder = 'e.g., Clean, bright, GRWM style';
+            document.getElementById('input-1').value = '';
+            
+            document.getElementById('label-2').innerText = 'Local Anchor';
+            document.getElementById('input-2').placeholder = 'e.g., Right here in downtown Austin';
+            document.getElementById('input-2').value = '';
+            
+            document.getElementById('field-3-wrapper').style.display = 'none';
+            document.getElementById('progress-fill').style.width = '66%';
+            
+            currentTaskStep = 2;
+        } else if (currentTaskStep === 2) {
+            // Capture step 2 vars and persist
+            businessVars.vibe = document.getElementById('input-1').value || 'aesthetic';
+            businessVars.localAnchor = document.getElementById('input-2').value || 'downtown'; // explicitly match server schema
+            // Map hero and localAnchor naming just to be safe
+            businessVars.heroSolution = businessVars.hero;
+            localStorage.setItem('adEngine_vars', JSON.stringify(businessVars));
+            localStorage.removeItem('adEngine_generatedScript'); // Force fresh payload
+            
+            document.getElementById('step-indicator').innerText = 'Step 3 of 3: Generating...';
+            document.getElementById('step-headline').innerHTML = 'Crafting <span class="italic text-secondary">your script.</span>';
+            document.getElementById('step-description').innerText = 'Please wait while we consult the AI director...';
+            
+            document.getElementById('dynamic-form').innerHTML = '<div class="flex justify-center py-10"><div class="w-16 h-16 border-4 border-secondary border-t-transparent rounded-full animate-spin"></div></div>';
+            document.getElementById('progress-fill').style.width = '100%';
+            
+            setTimeout(() => {
+                window.location.href = 'showcase_output.html';
+            }, 1800);
+        }
+    }
+
+    // Auth Check
+    const token = localStorage.getItem('adEngine_token');
+    if (!token) window.location.href = 'login.html';
+
+    // Sidebar Logic
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const sidebarPanel = document.getElementById('sidebar-panel');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+
+    function openSidebar() {
+        sidebarMenu.classList.remove('hidden');
+        // trigger reflow
+        void sidebarMenu.offsetWidth;
+        sidebarBackdrop.classList.remove('opacity-0');
+        sidebarBackdrop.classList.add('opacity-100');
+        sidebarPanel.classList.remove('-translate-x-full');
+        sidebarPanel.classList.add('translate-x-0');
+    }
+
+    function closeSidebar() {
+        sidebarBackdrop.classList.remove('opacity-100');
+        sidebarBackdrop.classList.add('opacity-0');
+        sidebarPanel.classList.remove('translate-x-0');
+        sidebarPanel.classList.add('-translate-x-full');
+        setTimeout(() => {
+            sidebarMenu.classList.add('hidden');
+        }, 300);
+    }
+
+    if(hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
+    if(closeMenuBtn) closeMenuBtn.addEventListener('click', closeSidebar);
+    if(sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+</script>
+</body></html>

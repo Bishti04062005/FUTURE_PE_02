@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String     @id @default(uuid())
+  email            String     @unique
+  passwordHash     String?
+  generation_count Int        @default(0)
+  campaigns        Campaign[]
+}
+
+model Campaign {
+  id            String   @id @default(uuid())
+  user_id       String?
+  user          User?    @relation(fields: [user_id], references: [id])
+  niche         String
+  pain_point    String
+  hero_solution String
+  vibe          String
+  local_anchor  String
+  created_at    DateTime @default(now())
+  scripts       Script[]
+}
+
+model Script {
+  id          String   @id @default(uuid())
+  campaign_id String
+  campaign    Campaign @relation(fields: [campaign_id], references: [id])
+  content     String   // Stringified JSON containing hook, bridge, close
+  is_refined  Boolean  @default(false)
+  version     Int      @default(1)
+  created_at  DateTime @default(now())
+}

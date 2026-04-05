@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI UGC Ad Engine | The Storyteller's Toolkit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b8ce9e",
+                        "on-error": "#ffffff",
+                        "outline": "#76777b",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#efeee8",
+                        "on-primary-fixed": "#1a1c1e",
+                        "outline-variant": "#c6c6ca",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffd9df",
+                        "background": "#faf9f3",
+                        "inverse-surface": "#30312d",
+                        "secondary-fixed": "#d4eab8",
+                        "surface": "#faf9f3",
+                        "primary": "#151719",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#673943",
+                        "primary-fixed-dim": "#c7c6ca",
+                        "error": "#ba1a1a",
+                        "secondary": "#52643d",
+                        "surface-variant": "#e3e3dd",
+                        "primary-fixed": "#e3e2e6",
+                        "tertiary": "#2d0a14",
+                        "inverse-primary": "#c7c6ca",
+                        "on-tertiary-container": "#bc838e",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2a2b2e",
+                        "on-primary-fixed-variant": "#46474a",
+                        "secondary-container": "#d4eab8",
+                        "surface-tint": "#5e5e61",
+                        "surface-container-high": "#e9e8e2",
+                        "on-surface-variant": "#45474a",
+                        "on-primary-container": "#929295",
+                        "on-secondary-fixed-variant": "#3a4c27",
+                        "surface-container-low": "#f5f4ee",
+                        "on-background": "#1b1c19",
+                        "surface-bright": "#faf9f3",
+                        "surface-dim": "#dbdad4",
+                        "surface-container-highest": "#e3e3dd",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-fixed": "#330f19",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#461f28",
+                        "on-secondary-fixed": "#102002",
+                        "tertiary-fixed-dim": "#f5b6c1",
+                        "on-secondary-container": "#576a42"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.paper-grain {
+    position: relative
+    }
+.paper-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDSet21Njzm_RcnVkBeH6CjawoUP_DfHiBykkxtAEhqJ0UhvmBsCBvKtjaWGxWEZMpflinJi5N5fZXVHR6NT-OGWg4Qea9ZJ9ofo9nxxnz-z9i3zKIXNh1kc1vAGfr4HU1jAPJrsK7hzCmH1jkUqN8n3hI6dT7i92OfTl5mnTOSznZ9ytXUX5_7ypY0mbyPUwUbBtMkpkwISThY8OoikqPMxv4NlZ7oYWh1QxgOXhL6F4RBOQGWHVc5rHTA_ar9ikQoO6Wn5-sM4F4);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 10
+    }
+.wavy-mask {
+    clip-path: ellipse(80% 100% at 50% 0%)
+    }
+.wavy-edge {
+    mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 1440 320\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,202.7C960,224,1056,224,1152,197.3C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z\" fill=\"black\"></path></svg>");
+    mask-repeat: no-repeat;
+    mask-size: cover
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-primary font-body paper-grain min-h-screen selection:bg-secondary-fixed-dim/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f3] dark:bg-stone-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center">
+<span class="text-xl font-serif text-[#151719] dark:text-stone-50 font-serif italic tracking-tight">AI UGC Ad Engine</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest">
+<a class="text-[#151719] dark:text-stone-50 font-bold hover:opacity-70 transition-opacity" href="landing_page.html">Home</a>
+<a class="hover:opacity-70 transition-opacity" href="multi_step_form.html">Create Ad</a>
+<a class="hover:opacity-70 transition-opacity" href="showcase_output.html">Showcase</a>
+<a class="hover:opacity-70 transition-opacity" href="contact.html">Contact</a>
+</nav>
+<button id="hamburger-btn" class="material-symbols-outlined text-[#151719] dark:text-stone-100 active:scale-95 duration-200">menu</button>
+</div>
+</header>
+<main class="pt-24 overflow-x-hidden min-h-screen">
+<section class="relative px-6 flex flex-col items-center text-center max-w-2xl mx-auto z-20 mt-12 mb-20">
+<h1 class="font-headline text-5xl md:text-7xl text-primary leading-tight mb-8">
+                Contact Us
+            </h1>
+<div class="w-full text-left bg-white/60 p-8 rounded-[2rem] shadow-xl backdrop-blur-md">
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Name</label>
+        <input class="w-full p-4 rounded-xl border-2 border-primary/10 bg-surface focus:outline-none focus:border-primary" type="text" placeholder="Your name">
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Email</label>
+        <input class="w-full p-4 rounded-xl border-2 border-primary/10 bg-surface focus:outline-none focus:border-primary" type="email" placeholder="Your email">
+    </div>
+    <div class="mb-8">
+        <label class="block text-sm font-bold mb-2">Message</label>
+        <textarea class="w-full p-4 rounded-xl border-2 border-primary/10 bg-surface focus:outline-none focus:border-primary h-32" placeholder="How can we help you?"></textarea>
+    </div>
+    <button class="bg-primary-container text-surface w-full px-10 py-4 rounded-full font-bold text-lg hover:-translate-y-1 transition-transform shadow-lg active:scale-95">Send Message</button>
+</div>
+</section>
+</main>
+<!-- Removed extra sections to keep page simple -->
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-4 bg-[#faf9f3]/90 dark:bg-stone-900/90 backdrop-blur-lg rounded-t-[2rem] shadow-[0_-10px_40px_rgba(21,23,25,0.05)]">
+<a class="flex flex-col items-center justify-center bg-[#2a2b2e] text-white rounded-full w-12 h-12 -translate-y-1 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 w-12 h-12 hover:text-[#2a2b2e] dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined">info</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 w-12 h-12 hover:text-[#2a2b2e] dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 w-12 h-12 hover:text-[#2a2b2e] dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-32 bg-[#faf9f3] dark:bg-stone-950 flex flex-col items-center gap-4 px-6 text-center">
+<div class="font-serif text-lg text-[#151719] dark:text-stone-300">AI UGC Ad Engine</div>
+<div class="flex gap-8 font-sans text-xs uppercase tracking-widest text-stone-500">
+<a class="hover:text-stone-700" href="#">Privacy</a>
+<a class="hover:text-stone-700" href="#">Terms</a>
+<a class="hover:text-stone-700" href="contact.html">Contact</a>
+</div>
+<p class="font-sans text-xs uppercase tracking-widest text-stone-500 mt-4 opacity-60">
+            © 2024 AI UGC Ad Engine. Crafted for Tactile Artistry.
+        </p>
+</footer>
+<!-- Sidebar Menu -->
+<div id="sidebar-menu" class="fixed inset-0 z-[100] hidden pointer-events-none">
+<div id="sidebar-backdrop" class="absolute inset-0 bg-primary/20 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-auto cursor-pointer"></div>
+<div id="sidebar-panel" class="absolute top-0 left-0 w-[80%] max-w-sm h-full bg-surface shadow-2xl transition-transform duration-300 -translate-x-full flex flex-col pointer-events-auto">
+<div class="px-6 py-6 flex justify-between items-center border-b border-surface-container-highest">
+<span class="font-['Noto_Serif'] font-black text-2xl tracking-tight text-primary">Menu</span>
+<button id="close-menu-btn" class="material-symbols-outlined text-primary hover:text-secondary hover:rotate-90 transition-all">close</button>
+</div>
+<nav class="p-6 flex flex-col gap-6 font-medium uppercase tracking-widest text-sm text-primary/80">
+<a href="landing_page.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">home</span> Home</a>
+<a href="multi_step_form.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">add_circle</span> Create Ad</a>
+<a href="showcase_output.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+<a href="campaigns.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">campaign</span> Campaigns</a>
+<a href="history.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">history</span> History</a>
+<a href="profile.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">person</span> Profile</a>
+<a href="contact.html" class="flex items-center gap-4 hover:text-secondary transition-colors"><span class="material-symbols-outlined">contact_support</span> Support</a>
+</nav>
+</div>
+</div>
+<script>
+    // Sidebar Logic
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const sidebarPanel = document.getElementById('sidebar-panel');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+
+    function openSidebar() {
+        sidebarMenu.classList.remove('hidden');
+        // trigger reflow
+        void sidebarMenu.offsetWidth;
+        sidebarBackdrop.classList.remove('opacity-0');
+        sidebarBackdrop.classList.add('opacity-100');
+        sidebarPanel.classList.remove('-translate-x-full');
+        sidebarPanel.classList.add('translate-x-0');
+    }
+
+    function closeSidebar() {
+        sidebarBackdrop.classList.remove('opacity-100');
+        sidebarBackdrop.classList.add('opacity-0');
+        sidebarPanel.classList.remove('translate-x-0');
+        sidebarPanel.classList.add('-translate-x-full');
+        setTimeout(() => {
+            sidebarMenu.classList.add('hidden');
+        }, 300);
+    }
+
+    if(hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
+    if(closeMenuBtn) closeMenuBtn.addEventListener('click', closeSidebar);
+    if(sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+</script>
+</body></html>

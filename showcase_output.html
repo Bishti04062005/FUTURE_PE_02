@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f5f4ee",
+                    "on-secondary-container": "#576a42",
+                    "surface-container-high": "#e9e8e2",
+                    "background": "#faf9f3",
+                    "on-primary-fixed-variant": "#46474a",
+                    "on-surface-variant": "#45474a",
+                    "surface-variant": "#e3e3dd",
+                    "secondary": "#52643d",
+                    "on-primary-fixed": "#1a1c1e",
+                    "secondary-fixed": "#d4eab8",
+                    "primary-fixed": "#e3e2e6",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#461f28",
+                    "inverse-on-surface": "#f2f1eb",
+                    "secondary-container": "#d4eab8",
+                    "surface": "#faf9f3",
+                    "surface-container-highest": "#e3e3dd",
+                    "surface-bright": "#faf9f3",
+                    "outline": "#76777b",
+                    "on-tertiary-fixed-variant": "#673943",
+                    "primary-fixed-dim": "#c7c6ca",
+                    "on-tertiary-fixed": "#330f19",
+                    "inverse-primary": "#c7c6ca",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffd9df",
+                    "on-background": "#1b1c19",
+                    "outline-variant": "#c6c6ca",
+                    "on-tertiary-container": "#bc838e",
+                    "on-secondary-fixed": "#102002",
+                    "on-primary-container": "#929295",
+                    "surface-container": "#efeee8",
+                    "tertiary": "#2d0a14",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3a4c27",
+                    "secondary-fixed-dim": "#b8ce9e",
+                    "inverse-surface": "#30312d",
+                    "primary": "#151719",
+                    "tertiary-fixed-dim": "#f5b6c1",
+                    "surface-tint": "#5e5e61",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#2a2b2e",
+                    "on-surface": "#1b1c19",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wavy-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 95% 95%, 90% 92%, 85% 98%, 80% 94%, 75% 100%, 70% 93%, 65% 97%, 60% 91%, 55% 99%, 50% 94%, 45% 98%, 40% 92%, 35% 100%, 30% 93%, 25% 96%, 20% 91%, 15% 98%, 10% 92%, 5% 97%, 0% 90%);
+        }
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-primary min-h-screen relative overflow-x-hidden pb-32">
+<div class="fixed inset-0 paper-texture z-[100]"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-[#faf9f3] dark:bg-stone-900 shadow-[0_10px_40px_-15px_rgba(21,23,25,0.05)] z-50">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#151719] dark:text-stone-100">auto_awesome</span>
+<h1 class="font-notoSerif text-2xl font-black text-[#151719] dark:text-stone-100">AdEngine</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#151719] dark:text-stone-100 font-bold hover:opacity-80 transition-opacity duration-300" href="landing_page.html">Home</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:opacity-80 transition-opacity duration-300" href="campaigns.html">Campaigns</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:opacity-80 transition-opacity duration-300" href="archive.html">Archive</a>
+</nav>
+<a href="profile.html" class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest flex items-center justify-center hover:opacity-80">
+<img alt="Creative Director Profile" class="w-full h-full object-cover" data-alt="Professional creative director portrait with artistic warm lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmlwfDAH_MNfDqAaAVnJOAC4TMvQwJHAHnDrQ8-4jfRMsCDqw8vo5DErX0r_wyjdful0nTvjLguLVQT-hjiTN4y5JnKZipmcGmMT8DSBRdDyd8f_UaoWIOULJ2iG1KegqzHGO16qTasYzwc4BQtB5zWqncGGNGUYcBffvPowGmck-aq96-kEoZMCFnq6gS-rihz9CJdAzGNKnMN_RG1BYtOTSfAwskqtVL4DHJN87zp1J2cDkb7vuBIG2HULGCPzRAxIWUyLOFdKA"/>
+</a>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12 relative">
+<!-- Abstract Decorations -->
+<div class="absolute -top-10 -left-20 w-64 h-64 bg-tertiary-fixed-dim/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute top-1/2 -right-40 w-96 h-96 bg-secondary-fixed/20 rounded-full blur-3xl -z-10"></div>
+<!-- Hero Title Section -->
+<div class="mb-20">
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none mb-4">
+                Creative <br/> <span class="text-secondary italic">Output.</span>
+</h2>
+<div class="w-32 h-2 bg-primary-container rounded-full mb-8"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Section 1: Generated Script Output -->
+<section class="lg:col-span-7 space-y-8">
+<div class="relative">
+<!-- Organic Shape Backing -->
+<div class="absolute -inset-4 bg-surface-container-low rounded-xl -rotate-1 -z-10"></div>
+<div class="absolute inset-0 bg-surface-container-highest rounded-xl rotate-1 -z-10"></div>
+<div class="bg-surface p-10 md:p-14 shadow-sm relative overflow-hidden">
+<!-- Wavy Mask Element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-[#ffd9df] opacity-30 -mr-16 -mt-16 rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-[#d4eab8] opacity-30 -ml-12 -mb-12 rotate-45"></div>
+<div class="flex items-center gap-4 mb-10">
+<span class="material-symbols-outlined text-primary text-4xl">auto_stories</span>
+<h3 class="font-headline text-3xl font-bold">Generated Script Output</h3>
+</div>
+<div class="space-y-12">
+<div class="group relative">
+<div class="absolute -left-6 top-0 text-outline-variant font-headline text-sm opacity-50">HOOK</div>
+<p id="output-hook" class="font-headline text-2xl md:text-3xl leading-snug text-primary-container">
+                                    "Stop buying $80 serums to fix texture. I've tried them all, and honestly? Nothing worked until I went to a professional."
+                                </p>
+</div>
+<div class="group relative">
+<div class="absolute -left-6 top-0 text-outline-variant font-headline text-sm opacity-50">BRIDGE</div>
+<p id="output-bridge" class="font-body text-xl text-on-surface-variant leading-relaxed">
+                                    I finally went to Skin Clinic for their signature glow-up facial. My skin feels like it can breathe again.
+                                </p>
+</div>
+<div class="group relative">
+<div class="absolute -left-6 top-0 text-outline-variant font-headline text-sm opacity-50">CLOSE</div>
+<div class="bg-surface-container-high p-6 rounded-lg border-l-4 border-secondary">
+<p id="output-close" class="font-body font-bold text-lg text-secondary uppercase tracking-wider">
+                                        They’re right by the park on 5th. Mention this video for 20% off.
+                                    </p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap gap-4">
+<button onclick="copyScript(this)" class="bg-primary-container text-surface px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-95 transition-transform">
+<span id="copy-icon" class="material-symbols-outlined">content_copy</span>
+                                <span id="copy-text">Copy Script</span>
+                            </button>
+<button onclick="refineWithAI(this)" class="bg-surface-variant text-primary px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-95 transition-transform overflow-hidden relative">
+<span id="refine-icon" class="material-symbols-outlined z-10 transition-transform duration-300">edit</span>
+                                <span id="refine-text" class="z-10 transition-all duration-300">Refine with AI</span>
+                            </button>
+</div>
+</div>
+</div>
+<!-- Abstract Illustration: Rolling Hills Cutout -->
+<div class="h-40 w-full relative overflow-hidden rounded-xl">
+<svg class="h-full w-full" preserveaspectratio="none" viewbox="0 0 500 150">
+<path d="M0,150 L0,100 C150,150 350,50 500,100 L500,150 Z" fill="#d4eab8"></path>
+<path d="M0,150 L0,120 C100,100 250,150 400,110 C450,100 500,120 500,120 L500,150 Z" fill="#52643d" opacity="0.4"></path>
+</svg>
+</div>
+</section>
+<!-- Section 2 & 3: Sidebar -->
+<aside class="lg:col-span-5 space-y-12">
+<!-- Section 2: Case Studies -->
+<div class="space-y-6">
+<h3 class="font-headline text-2xl font-bold px-2">Agency-Grade Case Studies</h3>
+<div class="relative group">
+<!-- Decorative stacked card effect -->
+<div class="absolute inset-0 bg-primary-container rounded-lg rotate-2 group-hover:rotate-1 transition-transform duration-500"></div>
+<div class="relative bg-[#faf9f3] p-8 rounded-lg shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<h4 class="font-headline text-2xl font-black">The Fitness Studio</h4>
+<span class="material-symbols-outlined text-secondary">fitness_center</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-outline">Problem</span>
+<p class="font-body text-sm font-medium">Low energy levels and motivation lag.</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-outline">Solution</span>
+<p class="font-body text-sm font-medium">15-minute high-intensity circuit.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-tertiary-fixed-dim rounded-lg -rotate-2 group-hover:-rotate-1 transition-transform duration-500"></div>
+<div class="relative bg-[#faf9f3] p-8 rounded-lg shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<h4 class="font-headline text-2xl font-black">The Aesthetic Clinic</h4>
+<span class="material-symbols-outlined text-tertiary-container">face_retouching_natural</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-outline">Problem</span>
+<p class="font-body text-sm font-medium">Persistent uneven skin texture.</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-outline">Solution</span>
+<p class="font-body text-sm font-medium">Specialized Hydrafacial treatment.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Removed UGC Secrets component -->
+<!-- Abstract Clouds Illustration -->
+<div class="flex justify-center gap-4">
+<div class="w-16 h-8 bg-surface-container-high rounded-full opacity-50"></div>
+<div class="w-24 h-10 bg-surface-container-high rounded-full mt-2"></div>
+<div class="w-12 h-6 bg-surface-container-high rounded-full opacity-30 mt-4"></div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-6 pb-8 pt-4 bg-[#faf9f3]/80 dark:bg-stone-900/80 backdrop-blur-xl rounded-t-[2.5rem] shadow-[0_-10px_40px_rgba(0,0,0,0.04)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#2a2b2e] text-[#faf9f3] dark:bg-stone-100 dark:text-stone-900 rounded-full w-14 h-14 mb-2 translate-y-[-4px] transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#151719] dark:hover:text-white transition-opacity duration-300" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold">Analyze</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#151719] dark:hover:text-white transition-opacity duration-300" href="#">
+<span class="material-symbols-outlined">folder_special</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#151719] dark:hover:text-white transition-opacity duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest font-bold">Settings</span>
+</a>
+</footer>
+<script>
+    let refinedCount = 0;
+    
+    async function refineWithAI(btn) {
+        const icon = document.getElementById('refine-icon');
+        const text = document.getElementById('refine-text');
+        
+        icon.innerText = "autorenew";
+        icon.classList.add("animate-spin");
+        text.innerText = "Refining...";
+        btn.classList.add("opacity-70", "pointer-events-none");
+        
+        const hook = document.getElementById('output-hook').innerText;
+        const bridge = document.getElementById('output-bridge').innerText;
+        const close = document.getElementById('output-close').innerText;
+        
+        const originalScript = { hook, bridge, close };
+        
+        let vars = {};
+        const savedData = localStorage.getItem('adEngine_vars');
+        if (savedData) vars = JSON.parse(savedData);
+        
+        const campaignId = localStorage.getItem('adEngine_campaignId');
+
+        const token = localStorage.getItem('adEngine_token');
+        if (!token) window.location.href = 'login.html';
+
+        try {
+            const res = await fetch('http://localhost:3000/api/refine', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ originalScript, vars, instruction: "Make it more concise and edgy.", campaignId })
+            });
+            const data = await res.json();
+            
+            if (data.success && data.script) {
+                // Flash animation
+                const textElements = ['output-hook', 'output-bridge', 'output-close'];
+                textElements.forEach(id => {
+                    const el = document.getElementById(id);
+                    el.style.opacity = 0;
+                });
+                
+                setTimeout(() => {
+                    document.getElementById('output-hook').innerText = data.script.hook;
+                    document.getElementById('output-bridge').innerText = data.script.bridge;
+                    document.getElementById('output-close').innerText = data.script.close;
+                    document.getElementById('output-hook').style.transition = 'opacity 0.5s ease';
+                    document.getElementById('output-bridge').style.transition = 'opacity 0.5s ease';
+                    document.getElementById('output-close').style.transition = 'opacity 0.5s ease';
+                    document.getElementById('output-hook').style.opacity = 1;
+                    document.getElementById('output-bridge').style.opacity = 1;
+                    document.getElementById('output-close').style.opacity = 1;
+                    
+                    // Update cache for persistence on refresh
+                    localStorage.setItem('adEngine_generatedScript', JSON.stringify(data.script));
+                }, 200);
+            } else {
+                alert("Refinement failed: " + (data.error || "Unknown error"));
+            }
+        } catch (err) {
+            alert("Connection error when refining. Is the backend running?");
+            console.error(err);
+        }
+        
+        icon.classList.remove("animate-spin");
+        icon.innerText = "check_circle";
+        text.innerText = "Refined!";
+        btn.classList.remove("opacity-70", "pointer-events-none");
+        
+        setTimeout(() => {
+            icon.innerText = "edit";
+            text.innerText = "Refine again";
+        }, 2000);
+    }
+    
+    function copyScript(btn) {
+        const hook = document.getElementById('output-hook').innerText;
+        const bridge = document.getElementById('output-bridge').innerText;
+        const close = document.getElementById('output-close').innerText;
+        
+        const fullScript = `HOOK:\n${hook}\n\nBRIDGE:\n${bridge}\n\nCLOSE:\n${close}`;
+        navigator.clipboard.writeText(fullScript);
+        
+        const icon = document.getElementById('copy-icon');
+        const text = document.getElementById('copy-text');
+        
+        icon.innerText = "check";
+        text.innerText = "Copied!";
+        btn.classList.add("bg-secondary", "text-surface");
+        btn.classList.remove("bg-primary-container");
+        
+        setTimeout(() => {
+            icon.innerText = "content_copy";
+            text.innerText = "Copy Script";
+            btn.classList.remove("bg-secondary", "text-surface");
+            btn.classList.add("bg-primary-container");
+        }, 2000);
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const savedData = localStorage.getItem('adEngine_vars');
+        const generatedScriptStr = localStorage.getItem('adEngine_generatedScript');
+        
+        if (generatedScriptStr) {
+            // Restore from cache if already generated
+            const parsed = JSON.parse(generatedScriptStr);
+            document.getElementById('output-hook').innerText = parsed.hook;
+            document.getElementById('output-bridge').innerText = parsed.bridge;
+            document.getElementById('output-close').innerText = parsed.close;
+        } else if (savedData) {
+            const vars = JSON.parse(savedData);
+            
+            // Set Loading Text 
+            document.getElementById('output-hook').innerText = "AI is drafting the perfect hook based on your prompt...";
+            document.getElementById('output-bridge').innerText = "Structuring your local anchor and hero solution...";
+            document.getElementById('output-close').innerText = "Finalizing the call to action for high conversion...";
+            
+            const token = localStorage.getItem('adEngine_token');
+            if (!token) window.location.href = 'login.html';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/generate', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(vars)
+                });
+                
+                const data = await response.json();
+                if (data.success && data.script) {
+                    const script = data.script;
+                    document.getElementById('output-hook').innerText = script.hook;
+                    document.getElementById('output-bridge').innerText = script.bridge;
+                    document.getElementById('output-close').innerText = script.close;
+                    
+                    // Cache to prevent re-generation on refresh
+                    localStorage.setItem('adEngine_generatedScript', JSON.stringify(script));
+                } else {
+                    document.getElementById('output-hook').innerText = "Server Error: " + data.error;
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('output-hook').innerText = "Failed to connect to the backend server. Make sure node server.js is running.";
+            }
+        }
+    });
+</script>
+</body></html>
