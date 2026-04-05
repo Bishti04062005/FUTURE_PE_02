@@ -218,7 +218,7 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/history', {
+            const res = await fetch('/api/history', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();

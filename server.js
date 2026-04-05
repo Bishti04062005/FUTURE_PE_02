@@ -272,7 +272,10 @@ app.get('/api/profile-stats', authenticateToken, async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-    console.log("Ready to handle /api/generate and /api/refine requests!");
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Server is running at http://localhost:${port}`);
+        console.log("Ready to handle /api/generate and /api/refine requests!");
+    });
+}
+module.exports = app;

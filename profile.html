@@ -296,7 +296,7 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/profile-stats', {
+            const res = await fetch('/api/profile-stats', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
