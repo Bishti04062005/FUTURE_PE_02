@@ -16,6 +16,9 @@ const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-for-development';
 app.use(cors());
 app.use(express.json());
 
+// Serve all HTML files and static assets from the project root
+app.use(express.static(__dirname));
+
 // Initialize Gemini
 let ai;
 try {
