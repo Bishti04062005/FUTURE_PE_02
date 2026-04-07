@@ -38,7 +38,7 @@ Lastly, open `landing_page.html` or `login.html` locally in your web browser.
 https://future-pe-02-sigma.vercel.app
 
 ## Prompt Used:
-"_ASK_:
+""_ASK_:
 You are full stack developer. Create an "AI Content Marketing using UGC Ads ".
 _CONTRAINTS_:
 User Generated Content (UGC) ads:
@@ -48,13 +48,22 @@ User Generated Content (UGC) ads:
 Build a prompt system that generates high-converting UGC ad content, the same way real content marketing agencies work for a local business (salon, cafe, gym, clinic).
 Content should feel like it can be directly used in ads.
 _FRAMEWORK_:
-Problem → solution → CTA"
+Problem → solution → CTA""
+
 -->Enter in gemini AI and copy the output.
+
 -->Open Antigravity, create new workspace and select a folder.
+
 -->Click additional button, then click MCP server and type stitch.
+
 -->Then click install and it will asked for API key.
+
 -->Go to Stitch website, go to Stitch setting and create API key.
+
 -->Copy the API key and input it in Antigravity.
+
 --> Add "Use stitch" in the copy output of Gemini AI output.
+
 --> And used "Use stitch" in every prompt you enter for creating UI/UX.
+
 --> Deploy it by Versel after creating the backend.
