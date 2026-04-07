@@ -12,6 +12,10 @@
       "dest": "/server.js"
     },
     {
+      "src": "/",
+      "dest": "/login.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
     }
