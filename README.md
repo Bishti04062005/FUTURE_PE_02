@@ -48,7 +48,8 @@ User Generated Content (UGC) ads:
 Build a prompt system that generates high-converting UGC ad content, the same way real content marketing agencies work for a local business (salon, cafe, gym, clinic).
 Content should feel like it can be directly used in ads.
 _FRAMEWORK_:
-Problem → solution → CTA""
+Problem → solution → CTA
+""
 
 -->Enter in gemini AI and copy the output.
 
@@ -62,7 +63,7 @@ Problem → solution → CTA""
 
 -->Copy the API key and input it in Antigravity.
 
---> Add "Use stitch" in the copy output of Gemini AI output.
+--> Add "Use stitch to create this website" in the copy output of Gemini AI output and also add "Used the theme based on the template image given." (Select any templete from google or pinterest).
 
 --> And used "Use stitch" in every prompt you enter for creating UI/UX.
 
