@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { GoogleGenAI } = require('@google/genai');
 const { PrismaClient } = require('@prisma/client');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
